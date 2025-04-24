@@ -11,46 +11,32 @@ Route::get("/jobs", function () {
     return "Jobs 1";
 })->name("jobs"); //for accwss
 
-Route::get("/s-test-request", function (Request $request) {
-    return [
-        'method' => $request->method(),
-        'url' => $request->url(),
-        'path' => $request->path(),
-        'fullUrl' => $request->fullUrl(),
-        'ip' => $request->ip(),
-        'header' => $request->header(),
-        'userAgent' => $request->userAgent(),
-    ];
+Route::get("/test1", function () {
+    return response("Jobs 2",200);
 });
 
-Route::get("/s-test-params", function (Request $request) {
-    //la1project.test/s-test-params?name=Max
-    return $request->query('name');
+Route::get("/test2", function () {
+    return response("Page not found",404);
 });
 
-Route::get("/s-test-params2", function (Request $request) {
-    //la1project.test/s-test-params2?name=Max&age=30&sort=desc
-    return $request->only(['name','age']);
+Route::get("/test3", function () {
+    return response('<h1>Hello!</h1>',200)->header('Content-Type', 'text/html');
 });
 
-Route::get("/s-test-params3", function (Request $request) {
-    //la1project.test/s-test-params3?name=Max&age=30&sort=desc
-    return $request->all();
+Route::get("/test4", function () {
+    return response()->json(['name' => 'John Doe']);
 });
 
-Route::get("/s-test-params4", function (Request $request) {
-    //la1project.test/s-test-params4?name=Max&age=30&sort=desc
-    return $request->has('name');
+Route::get("/test5", function () {
+    return response()->download(public_path('favicon.ico'));
 });
 
-Route::get("/s-test-params5", function (Request $request) {
-    //la1project.test/s-test-params5?name=Max&age=30&sort=desc
-    return $request->except('name');
+Route::get("/test6", function () {
+    return response()->json(['name' => 'John Doe'])->cookie('name', 'John Doe');
 });
 
-
-Route::get("/s-test-params-input", function (Request $request) {
-    //la1project.test/s-test-params4?name=Max&age=30&sort=desc
-    return $request->input('name','default - undefined');
+Route::get("/test7", function (Request $request) {
+     $val = $request->cookie('name');
+     return response()->json(['$val' => $val]);
 });
 
