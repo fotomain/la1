@@ -39,6 +39,18 @@ Route::get("/s-test-params3", function (Request $request) {
 });
 
 Route::get("/s-test-params4", function (Request $request) {
-    //la1project.test/s-test-params3?name=Max&age=30&sort=desc
+    //la1project.test/s-test-params4?name=Max&age=30&sort=desc
     return $request->has('name');
 });
+
+Route::get("/s-test-params5", function (Request $request) {
+    //la1project.test/s-test-params5?name=Max&age=30&sort=desc
+    return $request->except('name');
+});
+
+
+Route::get("/s-test-params-input", function (Request $request) {
+    //la1project.test/s-test-params4?name=Max&age=30&sort=desc
+    return $request->input('name','default - undefined');
+});
+
