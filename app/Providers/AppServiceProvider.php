@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+//S+ pattern
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+      //S+ pattern1
+      Route::pattern('id', '[0-9]+');
     }
 }
