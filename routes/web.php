@@ -27,3 +27,18 @@ Route::get("/s-test-params", function (Request $request) {
     //la1project.test/s-test-params?name=Max
     return $request->query('name');
 });
+
+Route::get("/s-test-params2", function (Request $request) {
+    //la1project.test/s-test-params2?name=Max&age=30&sort=desc
+    return $request->only(['name','age']);
+});
+
+Route::get("/s-test-params3", function (Request $request) {
+    //la1project.test/s-test-params3?name=Max&age=30&sort=desc
+    return $request->all();
+});
+
+Route::get("/s-test-params4", function (Request $request) {
+    //la1project.test/s-test-params3?name=Max&age=30&sort=desc
+    return $request->has('name');
+});
