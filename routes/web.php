@@ -37,7 +37,7 @@ Route::get("/api/users", function () {
 Route::get("/posts/{id}", function (string $id) {
    return "Post $id";
 });
-//    ->where('id', '[0-9]+');
+//pattern1    ->where('id', '[0-9]+');
 //'[a-zA-z]+'
 
 Route::get("/posts/{id}/comments/{commentId}", function (string $id, string $commentId) {
