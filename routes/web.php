@@ -22,3 +22,8 @@ Route::get("/s-test-request", function (Request $request) {
         'userAgent' => $request->userAgent(),
     ];
 });
+
+Route::get("/s-test-params", function (Request $request) {
+    //la1project.test/s-test-params?name=Max
+    return $request->query('name');
+});
