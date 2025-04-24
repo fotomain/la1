@@ -1,7 +1,6 @@
 
 ## RUN
 
-
 git init
 git remote add origin https://github.com/fotomain/la1.git
 git add .
