@@ -34,6 +34,10 @@ Route::get("/api/users", function () {
 
 });
 
+Route::get("/users/{id}", function (string $id) {
+    return "User $id";
+});
+
 Route::get("/posts/{id}", function (string $id) {
    return "Post $id";
 });
