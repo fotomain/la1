@@ -1,5 +1,6 @@
 
 <!-- http://la1project.test/jobs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,8 @@
     <title>Jobs List</title>
 </head>
 <body>
-<h1>Available Jobs</h1>
+<h1><?php echo $title; ?></h1>
+<h1><?php echo json_encode($jobs); ?></h1>
 <ul>
     <li>Web Developer</li>
     <li>Software Engineer</li>

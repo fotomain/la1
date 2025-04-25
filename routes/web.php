@@ -7,8 +7,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get("/jobs", function () {
-    return view('jobs');
-})->name("jobs"); //for accwss
+    $title = 'Available Jobs';
+    $jobs = ['Web Developer', 'Graphic Designer', 'Graphic Designer'];
+    return view('jobs.index')->with('title',$title)->with('jobs',$jobs);
+})->name("jobs");
+
+
+Route::get("/jobs/create", function () {
+    return view('jobs.create');
+})->name("jobs.create");
 
 
