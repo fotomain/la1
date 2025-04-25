@@ -1,5 +1,12 @@
 
 <!-- http://la1project.test/jobs/create -->
+@extends('layout')
+
+@section('title')
+    Create Job
+@endsection
+
+@section('content')
 
 <div>Create1</div>
 
@@ -12,6 +19,9 @@
     </button>
 
 </form>
+
+@endsection
+
 
 {{--<x-layout>--}}
 {{--    <x-slot name="title">Create Job</x-slot>--}}

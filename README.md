@@ -2,8 +2,11 @@
 ## RUN
 run it from H
 
+php artisan route:list
+
+php artisan make:controller JobController --resource
 php artisan make:controller JobController
-php artisan make:controller HomeController
+php artisan make:controller HomeController 
 
 git init
 git remote add origin https://github.com/fotomain/la1.git
