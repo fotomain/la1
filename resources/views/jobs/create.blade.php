@@ -3,6 +3,16 @@
 
 <div>Create1</div>
 
+<form action="/jobs" method="POST">
+    @csrf
+    <input type="text" name="title" >
+    <input type="text" name="description" >
+    <button type="submit">
+        Submit
+    </button>
+
+</form>
+
 {{--<x-layout>--}}
 {{--    <x-slot name="title">Create Job</x-slot>--}}
 {{--    <div class="bg-white mx-auto p-8 rounded-lg shadow-md w-full md:max-w-3xl">--}}
