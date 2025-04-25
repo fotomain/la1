@@ -16,4 +16,9 @@ class JobController extends Controller
         return view('jobs.create');
     }
 
+    public function show(string $id){
+        return "id = ".$id;
+//        return view('jobs.show');
+    }
+
 }
