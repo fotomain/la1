@@ -10,17 +10,28 @@
 </head>
 <body>
 <h1>{{$title}}</h1>
-@if(!empty($jobs))
+
 <ul>
-    @foreach($jobs as $job)
+    @forelse($jobs as $job)
         <li>
+            {{json_encode($loop->first)}}
+            {{json_encode($loop->even)}}
+            {{json_encode($loop->odd)}}
+            {{json_encode($loop->last)}}
+            {{$loop->index}}
+            {{$loop->iteration}}
+            {{$loop->remaining}}
+            {{$loop->count}}
             {{$job}}
         </li>
-    @endforeach
+    @empty
+        <li>
+            no jobs
+        </li>
+    @endforelse
+
+
 </ul>
-@else
-    <div>no jobs</div>
-@endif
 
 </body>
 </html>
