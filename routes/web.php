@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -9,12 +10,7 @@ Route::get('/', function () {
 
 
 
-Route::get("/jobs", function () {
-    $title = 'Available Jobs1';
-//    $jobs = [];
-    $jobs = ['Web Developer', 'Graphic Designer', 'Graphic Designer'];
-    return view('jobs.index')->with('title',$title)->with('jobs',$jobs);
-})->name("jobs");
+Route::get("/jobs", [JobController::class, 'index']);
 
 
 Route::get("/jobs/create", function () {
