@@ -10,8 +10,9 @@ Route::get('/', function () {
 
 
 Route::get("/jobs", function () {
-    $title = 'Available Jobs';
-    $jobs = ['Web Developer', 'Graphic Designer', 'Graphic Designer'];
+    $title = 'Available Jobs1';
+    $jobs = [];
+//        ['Web Developer', 'Graphic Designer', 'Graphic Designer'];
     return view('jobs.index')->with('title',$title)->with('jobs',$jobs);
 })->name("jobs");
 

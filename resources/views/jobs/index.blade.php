@@ -9,13 +9,18 @@
     <title>Jobs List</title>
 </head>
 <body>
-<h1><?php echo $title; ?></h1>
-<h1><?php echo json_encode($jobs); ?></h1>
+<h1>{{$title}}</h1>
+@if(!empty($jobs))
 <ul>
-    <li>Web Developer</li>
-    <li>Software Engineer</li>
-    <li>System Analyst</li>
-    <li>Database Administrator</li>
+    @foreach($jobs as $job)
+        <li>
+            {{$job}}
+        </li>
+    @endforeach
 </ul>
+@else
+    <div>no jobs</div>
+@endif
+
 </body>
 </html>
