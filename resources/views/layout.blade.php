@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    @include('partials.navbar');
+    <x-header/>
     <h1>@yield('title','Welcome FireJobs')</h1>
     <main class="container mx-auto p-4 mt-4">
         @yield('content')
