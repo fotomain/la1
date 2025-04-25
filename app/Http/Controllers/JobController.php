@@ -12,5 +12,8 @@ class JobController extends Controller
         return view('jobs.index')->with('title',$title)->with('jobs',$jobs);
     }
 
+    public function create(){
+        return view('jobs.create');
+    }
 
 }
